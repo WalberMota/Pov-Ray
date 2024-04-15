@@ -11,7 +11,7 @@ global_settings{ assumed_gamma 1.0 }
 #include "textures.inc"
 
 // camera ------------------------------------------------------------------
-#declare Camera_0 = camera {/*ultra_wide_angle*/ angle 75      // visão de frente
+#declare Camera_0 = camera {/*ultra_wide_angle*/ angle 75      // visão frontal
                             location  <0.0 , 1.0 ,-3.0>
                             right     x*image_width/image_height
                             look_at   <0.0 , 1.0 , 0.0>}
@@ -19,7 +19,7 @@ global_settings{ assumed_gamma 1.0 }
                             location  <2.0 , 2.5 ,-3.0>
                             right     x*image_width/image_height
                             look_at   <0.0 , 1.0 , 0.0>}
-#declare Camera_2 = camera {/*ultra_wide_angle*/ angle 90 // vista do lado direito
+#declare Camera_2 = camera {/*ultra_wide_angle*/ angle 90 // vista lateral direita
                             location  <3.0 , 1.0 , 0.0>
                             right     x*image_width/image_height
                             look_at   <0.0 , 1.0 , 0.0>}
