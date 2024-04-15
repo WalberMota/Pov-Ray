@@ -9,7 +9,6 @@ global_settings { assumed_gamma 2.0 }  //correção gama
 
 #include "colors.inc"                  // incluindo arquivos com cores e texturas predefinidas
 
-
 #include "textures.inc"   
 // Céu -------------------------------------
 plane{ <0,0,50>,1 hollow
@@ -23,9 +22,8 @@ plane{ <0,0,50>,1 hollow
                  [1.00 rgb<0.5,0.5,0.5>  ]
                        } //
            scale<0,0,1.5>*2.5
-           translate<0,5,0> //<   , aumenta nublado, nuvens mais escuras/luminosas>
+           translate<0,0,-30>
            } // Fim do pigmento
          finish {ambient 1 diffuse 0}
         } // Fim da textura
        scale 5000}
-
