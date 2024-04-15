@@ -22,8 +22,10 @@ global_settings { assumed_gamma 1.8 }  //correção gama
 light_source { <50.0, 7.0, -15.0> colour White }
 
 camera {
-    location <0.0,20.0,30.0>
-    look_at  <0.0,1.0, -10.0>
+    location <0.0,20.0,30.0>  //ponto de vista
+    look_at  <0.0,1.0, -10.0> //onde olhar
+    right x*image_width/image_height   //proporção da tela
+    angle 75      //ângulo da câmera
 }
 
 // Céu -------------------------------------
