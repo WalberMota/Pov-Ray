@@ -24,10 +24,10 @@ global_settings{ assumed_gamma 1.0 }
                             right     x*image_width/image_height
                             look_at   <0.0 , 1.0 , 0.0>}
 #declare Camera_3 = camera {/*ultra_wide_angle*/ angle 90        // vista de cima
-                            location  <0.0 , 3.0 ,-0.001>
+                            location  <0.0 , 4.0 ,-0.001>
                             right     x*image_width/image_height
                             look_at   <0.0 , 1.0 , 0.0>}
-camera{Camera_1}
+camera{Camera_3}
 
 // sol ---------------------------------------------------------------------
 light_source{<1500,2500,-2500> color White}
@@ -59,7 +59,6 @@ fog { fog_type   2
       turbulence 1.8
     }
 // Terreno ----------------------------------
-/*
 plane{ <0,1,0>, -2
        texture{
           pigment{ color rgb<0.20,0.45,0>}
@@ -67,12 +66,13 @@ plane{ <0,1,0>, -2
           finish { phong 0.5 }
        } // Fim da textura
      } // Fim do plano (terreno)
-*/
-// sea ---------------------------------------------------------------------
-plane{<0,1,0>, 0 
-       texture{Polished_Chrome
-               normal { crackle 0.15 scale <0.35,0.25,0.25> turbulence 0.5 } 
-               finish { reflection 0.60}}}
+
+
+//mar ---------------------------------------------------------------------
+// plane{<0,1,0>, 0 
+//        texture{Polished_Chrome
+//                normal { crackle 0.15 scale <0.35,0.25,0.25> turbulence 0.5 } 
+//                finish { reflection 0.60}}}
 
 //--------------------------------------------------------------------------
 //---------------------------- objetos em cena ----------------------------
