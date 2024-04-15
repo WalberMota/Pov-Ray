@@ -11,30 +11,53 @@ global_settings{ assumed_gamma 1.0 }
 #include "textures.inc"
 
 // camera ------------------------------------------------------------------
-#declare Camera_0 = camera {/*ultra_wide_angle*/ angle 75      // front view
+#declare Camera_0 = camera {/*ultra_wide_angle*/ angle 75      // visão de frente
                             location  <0.0 , 1.0 ,-3.0>
                             right     x*image_width/image_height
                             look_at   <0.0 , 1.0 , 0.0>}
-#declare Camera_1 = camera {/*ultra_wide_angle*/ angle 90   // diagonal view
+#declare Camera_1 = camera {/*ultra_wide_angle*/ angle 90   // vista diagonal
                             location  <2.0 , 2.5 ,-3.0>
                             right     x*image_width/image_height
                             look_at   <0.0 , 1.0 , 0.0>}
-#declare Camera_2 = camera {/*ultra_wide_angle*/ angle 90 // right side view
+#declare Camera_2 = camera {/*ultra_wide_angle*/ angle 90 // vista do lado direito
                             location  <3.0 , 1.0 , 0.0>
                             right     x*image_width/image_height
                             look_at   <0.0 , 1.0 , 0.0>}
-#declare Camera_3 = camera {/*ultra_wide_angle*/ angle 90        // top view
+#declare Camera_3 = camera {/*ultra_wide_angle*/ angle 90        // vista de cima
                             location  <0.0 , 3.0 ,-0.001>
                             right     x*image_width/image_height
                             look_at   <0.0 , 1.0 , 0.0>}
 camera{Camera_1}
 
-// sun ---------------------------------------------------------------------
+// sol ---------------------------------------------------------------------
 light_source{<1500,2500,-2500> color White}
 
-// sky ---------------------------------------------------------------------
+// céu ---------------------------------------------------------------------
+plane{ <0,1,0.2>,1 hollow
+       texture{
+         pigment{ bozo turbulence 0.92
+           color_map{
+                 [0.00 rgb<0.2,0.2,1>*0.9]
+                 [0.50 rgb<0.2,0.2,1>*0.9]
+                 [0.70 rgb<1,1,1>        ]
+                 [0.85 rgb<0.2,0.2,0.2>  ]
+                 [1.00 rgb<0.5,0.5,0.5>  ]
+                       } //
+           scale<1,1,1.5>*2.5
+           translate<0,0,0>
+           } // Fim do pigmento
+         finish {ambient 1 diffuse 0}
+        } // Fim da textura
+       scale 5000}
 
-
+// nevoeiro no chão -------------------------------------------------
+fog { fog_type   2
+      distance   150
+      color      White *0.7 
+      fog_offset 0.1
+      fog_alt    3.5
+      turbulence 1.8
+    }
 // Terreno ----------------------------------
 /*
 plane{ <0,1,0>, -2
