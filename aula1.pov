@@ -4,7 +4,7 @@
 //-------------------------------------------
 
 #version  3.7;  //seleção de versão
-global_settings { assumed_gamma 1.8 }  //correção gama
+global_settings { assumed_gamma 2.0 }  //correção gama
 
 #default{ finish{ ambient 0.1 diffuse 0.9 }} //valores padrão para iluminação indireta/direta
 
@@ -19,17 +19,17 @@ global_settings { assumed_gamma 1.8 }  //correção gama
 // #include "woods.inc"
 
 // Fonte luminosa principal
-light_source { <50.0, 7.0, -15.0> colour White }
+light_source { <2.0, 50.0, -10.0> colour White }
 
 camera {
-    location <0.0,20.0,30.0>  //ponto de vista
-    look_at  <0.0,1.0, -10.0> //onde olhar
+    location <0,40.0,-60.0>  //ponto de vista
+    look_at  <0.0,10.0, -10.0> //onde olhar
     right x*image_width/image_height   //proporção da tela
-    angle 75      //ângulo da câmera
+    angle 35      //ângulo da câmera
 }
 
 // Céu -------------------------------------
-plane{ <0,0,-40>,1 hollow
+plane{ <0,0,50>,1 hollow
        texture{
          pigment{ bozo turbulence 0.92
            color_map{
@@ -40,25 +40,25 @@ plane{ <0,0,-40>,1 hollow
                  [1.00 rgb<0.5,0.5,0.5>  ]
                        } //
            scale<0,0,1.5>*2.5
-           translate<0,0,0>
+           translate<0,0,-40>
            } // Fim do pigmento
          finish {ambient 1 diffuse 0}
         } // Fim da textura
        scale 5000}
 
 // Terreno ----------------------------------
-plane{ <0,1,0>, 0
+plane{ <0,1,0>, -5
        texture{
-          pigment{ color rgb<0.22,0.45,0>}
+          pigment{ color rgb<0.20,0.45,0>}
           normal { bumps 0.75 scale 0.015 }
-          finish { phong 0.1 }
+          finish { phong 0.5 }
        } // Fim da textura
      } // Fim do plano (terreno)
 
 
 
 //Objeto toroidal
-torus { 7.0, 3.0
+torus { 9.0, 1.0
    // Textura da camada inferior. Usa um bozo "esticado" para grãos finos e porosos
    texture {
       pigment {
