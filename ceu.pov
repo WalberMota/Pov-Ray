@@ -1,3 +1,16 @@
+// POV-Ray 3.7 Arquivo de cena "aula1.pov"
+// por Walber S. Mota, 14-Jan-2024
+//-------------------------------------------
+
+#version  3.7;  //seleção de versão
+global_settings { assumed_gamma 2.0 }  //correção gama
+
+#default{ finish{ ambient 0.1 diffuse 0.9 }} //valores padrão para iluminação indireta/direta
+
+#include "colors.inc"                  // incluindo arquivos com cores e texturas predefinidas
+
+
+#include "textures.inc"   
 // Céu -------------------------------------
 plane{ <0,0,50>,1 hollow
        texture{
@@ -15,3 +28,4 @@ plane{ <0,0,50>,1 hollow
          finish {ambient 1 diffuse 0}
         } // Fim da textura
        scale 5000}
+
