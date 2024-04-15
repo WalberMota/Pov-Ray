@@ -1,10 +1,17 @@
-#version  3.7;
-global_settings { assumed_gamma 1.8 }
 
-#include "colors.inc"
+// POV-Ray 3.7 Arquivo de cena "aula1.pov"
+// por Walber S. Mota, 14-Jan-2024
+//-------------------------------------------
+
+#version  3.7;  //seleção de versão
+global_settings { assumed_gamma 1.8 }  //correção gama
+
+#default{ finish{ ambient 0.1 diffuse 0.9 }} //valores padrão para iluminação indireta/direta
+
+#include "colors.inc"                  // incluindo arquivos com cores e texturas predefinidas
 
 
-#include "textures.inc"    // pre-defined scene elements
+#include "textures.inc"                  
 // #include "stones.inc"
 // #include "shapes.inc"
 // #include "glass.inc"
