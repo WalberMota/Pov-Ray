@@ -27,25 +27,16 @@ global_settings{ assumed_gamma 1.0 }
                             location  <0.0 , 3.0 ,-0.001>
                             right     x*image_width/image_height
                             look_at   <0.0 , 1.0 , 0.0>}
-camera{Camera_0}
+camera{Camera_1}
 
 // sun ---------------------------------------------------------------------
 light_source{<1500,2500,-2500> color White}
 
 // sky ---------------------------------------------------------------------
-plane{<0,1,0>,1 hollow  
-       texture{ pigment{ bozo turbulence 0.92
-                         color_map { [0.00 rgb <0.20, 0.20, 1.0>*0.9]
-                                     [0.50 rgb <0.20, 0.20, 1.0>*0.9]
-                                     [0.70 rgb <1,1,1>]
-                                     [0.85 rgb <0.25,0.25,0.25>]
-                                     [1.0 rgb <0.5,0.5,0.5>]}
-                        scale<1,1,1.5>*2.5  translate< 0,0,0>
-                       }
-                finish {ambient 1 diffuse 0} }      
-       scale 10000}
+
 
 // Terreno ----------------------------------
+/*
 plane{ <0,1,0>, -2
        texture{
           pigment{ color rgb<0.20,0.45,0>}
@@ -53,6 +44,12 @@ plane{ <0,1,0>, -2
           finish { phong 0.5 }
        } // Fim da textura
      } // Fim do plano (terreno)
+*/
+// sea ---------------------------------------------------------------------
+plane{<0,1,0>, 0 
+       texture{Polished_Chrome
+               normal { crackle 0.15 scale <0.35,0.25,0.25> turbulence 0.5 } 
+               finish { reflection 0.60}}}
 
 //--------------------------------------------------------------------------
 //---------------------------- objetos em cena ----------------------------
