@@ -8,4 +8,4 @@ Há 30 anos, em 29 de julho de 1991, o primeiro beta do que se tornaria o POV-Ra
 
 >A imagem [***Sala_da_Fama***](https://github.com/WalberMota/Pov-Ray/blob/main/Sala_da_Fama.jpg "Exemplos"), demonstra o poder do software.
 
-Mais infomações no [Site Oficial](https://www.povray.org/).
+Mais infomações no **[Site Oficial](https://www.povray.org/)**.
